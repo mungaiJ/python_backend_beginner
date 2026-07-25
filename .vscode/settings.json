@@ -1,0 +1,10 @@
+{
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnusedImport": "none",
+    "reportUnusedVariable": "none",
+    "reportGeneralTypeIssues": "none",
+    "reportOptionalMemberAccess": "none",
+    "reportOptionalSubscript": "none",
+    "reportUnboundVariable": "none"
+  }
+}
