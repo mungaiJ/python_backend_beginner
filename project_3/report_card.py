@@ -1,26 +1,39 @@
 def student_details():
     student_name = str(input('Enter the name of the student: ').strip().title())
     student_age = int(input('Enter student\'s age: '))
+    if not student_name:
+            print('Name required....')
+            return
+    elif not student_name.replace(" ", "").isalpha():
+            print("Please enter a vaid name.")
+            return
     return(student_name,student_age)
-print(student_details())
+# print(student_details())
 
-# english_score = int(input('Enter the score for English: '))
-# comm_skill_score = int(input('Enter the score for Communication Skills: '))
-# net_score = int(input('Enter the score for Networking: '))
-# math_score = int(input('Enter the score for Maths: '))
+def student_score():
+    english_score = int(input('Enter the score for English: '))
+    comm_skill_score = int(input('Enter the score for Communication Skills: '))
+    net_score = int(input('Enter the score for Networking: '))
+    math_score = int(input('Enter the score for Maths: '))
+    return(english_score, comm_skill_score, net_score, math_score)
 
-# if not student_name:
-#     print('Name required....')
-# elif not student_name.isalpha():
-#     print("Please enter a vaid name.")
-# elif (english_score < 0 or english_score > 100 or
-#     comm_skill_score < 0 or comm_skill_score > 100 or
-#     net_score < 0 or net_score > 100 or
-#     math_score < 0 or math_score > 100):
-#     print("Invalid score. Please put the correct scores.")
-# else:
-#     total_score = english_score + comm_skill_score + net_score + math_score
-#     average_score = total_score / 4
+details = student_details()
+score = student_score()
+
+print(details)
+print(score)
+
+# def calculate_avg(english_score,comm_skill_score,net_score,math_score):
+#     if (english_score < 0 or english_score > 100 or
+#         comm_skill_score < 0 or comm_skill_score > 100 or
+#         net_score < 0 or net_score > 100 or
+#         math_score < 0 or math_score > 100):
+#         print("Invalid score. Please put the correct scores.")
+#     else:
+#         total_score = english_score + comm_skill_score + net_score + math_score
+#         average_score = total_score / 4
+
+#     return total_score
 
 #     print(f'\nReport Card for {student_name} (Age: {student_age})')
 #     print(f'English: {english_score}, Communication Skills: {comm_skill_score}, Networking: {net_score}, Maths: {math_score}')
