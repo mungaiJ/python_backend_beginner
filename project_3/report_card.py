@@ -23,17 +23,26 @@ score = student_score()
 print(details)
 print(score)
 
-# def calculate_avg(english_score,comm_skill_score,net_score,math_score):
-#     if (english_score < 0 or english_score > 100 or
-#         comm_skill_score < 0 or comm_skill_score > 100 or
-#         net_score < 0 or net_score > 100 or
-#         math_score < 0 or math_score > 100):
-#         print("Invalid score. Please put the correct scores.")
-#     else:
-#         total_score = english_score + comm_skill_score + net_score + math_score
-#         average_score = total_score / 4
+def total_score(english_score,comm_skill_score,net_score,math_score):
+    if (english_score < 0 or english_score > 100 or
+        comm_skill_score < 0 or comm_skill_score > 100 or
+        net_score < 0 or net_score > 100 or
+        math_score < 0 or math_score > 100):
+        print("Invalid score. Please put the correct scores.")
+    total = english_score + comm_skill_score + net_score + math_score
 
-#     return total_score
+    return total
+
+total = total_score(*score)
+print(total)
+
+def avg_score(scores):
+    average_score = scores / 4
+
+    return average_score
+average = avg_score(total)
+print(average)
+
 
 #     print(f'\nReport Card for {student_name} (Age: {student_age})')
 #     print(f'English: {english_score}, Communication Skills: {comm_skill_score}, Networking: {net_score}, Maths: {math_score}')
