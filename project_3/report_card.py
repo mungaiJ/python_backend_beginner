@@ -29,9 +29,9 @@ def total_score(english_score,comm_skill_score,net_score,math_score):
         net_score < 0 or net_score > 100 or
         math_score < 0 or math_score > 100):
         print("Invalid score. Please put the correct scores.")
-    total = english_score + comm_skill_score + net_score + math_score
+    total_marks = english_score + comm_skill_score + net_score + math_score
 
-    return total
+    return total_marks
 
 total = total_score(*score)
 print(total)
@@ -43,29 +43,35 @@ def avg_score(scores):
 average = avg_score(total)
 print(average)
 
+student_name, student_age = details
 
-#     print(f'\nReport Card for {student_name} (Age: {student_age})')
-#     print(f'English: {english_score}, Communication Skills: {comm_skill_score}, Networking: {net_score}, Maths: {math_score}')
-#     print(f'Total Score: {total_score}')
-#     print(f'Average Score: {round(average_score, 2)}')
+def grade_award(average,student_age):
+    if average >= 90 and student_age < 18:
+        grade = ("A")
+        message = 'Young and Genius'
+    elif average >= 80:
+        grade = ("B")
+        message = 'Excelent work, keep it up'
+    elif average >= 70 and average < 90:
+        grade = ("C")
+        message = 'Good job, keep pushing for excelence'
+    elif average >= 60:
+        grade = ("D")
+        message = "Fair effort. There's room for improvement."
+    elif average >= 50:
+        grade = ("E")
+        message = "You passed, but keep practising."
+    else:
+        grade = ("F")
+        message = "Don't give up. Keep studying and you'll improve."
+    return grade, message
 
-#     if average_score >= 90 and student_age < 18:
-#         grade = ("A")
-#         message = 'Young and Genius'
-#     elif average_score >= 80:
-#         grade = ("B")
-#         message = 'Excelent work, keep it up'
-#     elif average_score >= 70 and average_score < 90:
-#         grade = ("C")
-#         message = 'Good job, keep pushing for excelence'
-#     elif average_score >= 60:
-#         grade = ("D")
-#         message = "Fair effort. There's room for improvement."
-#     elif average_score >= 50:
-#         grade = ("E")
-#         message = "You passed, but keep practising."
-#     else:
-#         grade = ("F")
-#         message = "Don't give up. Keep studying and you'll improve."
+grade, message = grade_award(average,student_age)
+print(grade)
 
-#     print(f'{student_name} scored a grade of {grade}. {message}')
+print(f"""Report Card for {student_name}
+
+Age: {student_age}
+Average Score: {average}
+Grade: {grade}
+Message: {message}""")
